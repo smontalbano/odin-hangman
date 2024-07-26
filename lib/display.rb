@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 require 'colorize'
+require_relative 'savable'
 
 module Display
+  include Savable
+
   @@hangman = ['', '', '', '', '', '']
   @@body_parts = ['o', '|', '/', '\\', '/', '\\']
   @@alpha = %w[a b c d e f g h i j k l m n o p q r s t u v w x y z]
@@ -76,5 +79,14 @@ a point to your incorrect guesses total.'
 
   def correct_guess(guess)
     @@alpha.map! { |v| v == guess ? v.colorize(:green) : v }
+  end
+
+  def display_save(guess, word, incorrect)
+    save_game(guess, word, incorrect, @@alpha, @@hangman)
+  end
+
+  def display_load(data)
+    @@alpha = data[:alpha]
+    @@hangman = data[:hangman]
   end
 end

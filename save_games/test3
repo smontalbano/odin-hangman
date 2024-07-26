@@ -1,0 +1,44 @@
+---
+:guess:
+- _
+- _
+- _
+- _
+- e
+- _
+:secret_word: issued
+:incorrect_guess: 2
+:alpha:
+- "\e[0;31;49ma\e[0m"
+- b
+- c
+- d
+- "\e[0;32;49me\e[0m"
+- f
+- g
+- "\e[0;31;49mh\e[0m"
+- i
+- j
+- k
+- l
+- m
+- "n"
+- o
+- p
+- q
+- r
+- s
+- t
+- u
+- v
+- w
+- x
+- "y"
+- z
+:hangman:
+- o
+- "|"
+- ''
+- ''
+- ''
+- ''

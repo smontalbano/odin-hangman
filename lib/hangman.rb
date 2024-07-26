@@ -25,7 +25,10 @@ class Hangman
     if input == 1
       game_init
     elsif input == 2
-      load_game
+      display_dir
+      load
+      display_board(@guess)
+      game_play
     else
       puts "I'm sorry, I didn't get that. Please try again."
       start_load
@@ -35,7 +38,6 @@ class Hangman
 
   def game_init
     @secret_word = generate_random_word
-    # puts @secret_word
     parse_secret_word
     create_board(@guess)
     game_play
@@ -49,7 +51,7 @@ class Hangman
         new_guess = guess.to_s
         parse_guess(new_guess)
       elsif input == 2
-        save
+        display_save(@guess, @secret_word, @incorrect_guess_count)
       else
         puts "I'm sorry, I didn't get that. Please try again."
         next
@@ -91,8 +93,18 @@ class Hangman
     @incorrect_guess_count == 6 || @guess.join == @secret_word
   end
 
-  def load_game
-    puts 'Load'
+  def display_dir
+    puts Dir.entries('save_games')
+    puts 'Select game to load'
+  end
+
+  def load
+    file = gets.chomp
+    data = load_game(file)
+    @secret_word = data[:secret_word]
+    @guess = data[:guess]
+    @incorrect_guess_count = data[:incorrect_guess]
+    display_load(data)
   end
 end
 

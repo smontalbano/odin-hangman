@@ -1,0 +1,44 @@
+---
+:guess:
+- d
+- e
+- _
+- e
+- a
+- _
+:secret_word: defeat
+:incorrect_guess: 4
+:alpha:
+- "\e[0;32;49ma\e[0m"
+- "\e[0;31;49mb\e[0m"
+- c
+- "\e[0;32;49md\e[0m"
+- "\e[0;32;49me\e[0m"
+- f
+- g
+- h
+- i
+- j
+- k
+- l
+- "\e[0;31;49mm\e[0m"
+- "\e[0;31;49mn\e[0m"
+- o
+- p
+- q
+- r
+- s
+- t
+- u
+- "\e[0;31;49mv\e[0m"
+- w
+- x
+- "y"
+- z
+:hangman:
+- o
+- "|"
+- "/"
+- "\\"
+- ''
+- ''
